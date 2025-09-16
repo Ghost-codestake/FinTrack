@@ -103,7 +103,7 @@ class ExpenseTracker {
                     <div class="transaction-description">${transaction.description}</div>
                 </div>
                 <div class="transaction-right">
-                    <div class="transaction-amount">${transaction.type === 'income' ? '+' : '-'}$${transaction.amount.toFixed(2)}</div>
+                    <div class="transaction-amount">${transaction.type === 'income' ? '+' : '-'}#${transaction.amount.toFixed(2)}</div>
                     <div class="transaction-date">${this.formatDate(transaction.date)}</div>
                 </div>
             </div>
@@ -148,9 +148,9 @@ class ExpenseTracker {
             
         const balance = totalIncome - totalExpense;
         
-        document.getElementById('total-income').textContent = `$${totalIncome.toFixed(2)}`;
-        document.getElementById('total-expense').textContent = `$${totalExpense.toFixed(2)}`;
-        document.getElementById('balance').textContent = `$${balance.toFixed(2)}`;
+        document.getElementById('total-income').textContent = `#${totalIncome.toFixed(2)}`;
+        document.getElementById('total-expense').textContent = `#${totalExpense.toFixed(2)}`;
+        document.getElementById('balance').textContent = `#${balance.toFixed(2)}`;
     }
     
     applyFilters() {
@@ -325,7 +325,7 @@ class ExpenseTracker {
                 scales: {
                     y: {
                         beginAtZero: true,
-                        title: { display: true, text: 'Amount ($)' }
+                        title: { display: true, text: 'Amount (#)' }
                     },
                     x: {
                         title: { display: true, text: 'Month' }
